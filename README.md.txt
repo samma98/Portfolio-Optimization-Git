@@ -1,5 +1,3 @@
-# Portfolio Optimization Tool
- 
 Portfolio Optimization App
 --------------------------
 
