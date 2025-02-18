@@ -31,13 +31,13 @@ def plot_full_frontier(
             opacity=0.6,
             color_discrete_sequence=["blue"],
             labels={"Volatility": "Volatility (σ)", "Returns": "Return (μ)"},
-            title="Markowitz Efficient Frontier (Random + True Frontier)"
+            title="Markowitz Efficient Frontier"
         )
     else:
         fig = go.Figure()
         fig.update_layout(
-            title="Markowitz Efficient Frontier (No Random Portfolios)",
-            xaxis_title="Volatility (σ)",
+            title="Markowitz Efficient Frontier",
+            xaxis_title="Risk (σ)",
             yaxis_title="Return (μ)"
         )
 
@@ -53,7 +53,7 @@ def plot_full_frontier(
             mode="lines+markers",
             line=dict(color="orange", width=2),
             name="Efficient Frontier",
-            customdata=frontier_sorted["Weights_json"],  # store JSON
+            customdata=frontier_sorted["Weights_json"],
             hovertemplate=(
                 "Volatility: %{x:.2f}<br>"
                 "Return: %{y:.2f}<br>"
@@ -88,7 +88,7 @@ def plot_full_frontier(
 
     fig.update_layout(
         width=1250,
-        height=600,
+        height=650,
         legend=dict(
             orientation='h',
             yanchor='bottom',
